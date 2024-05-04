@@ -6,6 +6,11 @@ import { GiHotMeal } from "react-icons/gi";
 import { Main } from '../../../Components/Main';
 import './styles.css';
 
+interface FormValues {
+    username: string;
+    password: string;
+}
+
 
 export const LoginForm = () => {
     const dispatch = useUserDispatch();
@@ -13,14 +18,15 @@ export const LoginForm = () => {
         register,
         handleSubmit,
         formState: { errors },
-    } = useForm();
+    } = useForm<FormValues>();
 
     const navigate = useNavigate();
 
-    const onFormSubmit = (data) => {
+    const onFormSubmit = (data: FormValues) => {
         const username = data.username;
         dispatch({ type: USER_ACTIONS.updateUser, username });
-        dispatch({ type: USER_ACTIONS.logIn })
+        dispatch({ type: USER_ACTIONS.logIn });
+        console.log(data)
         navigate('/', { replace: true })
     }
 

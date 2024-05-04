@@ -5,6 +5,13 @@ import { ConfirmMessage } from '../../../Components/ConfirmMessage';
 import { Main } from '../../../Components/Main';
 import './styles.css';
 
+interface FormErrors {
+	username: string;
+	email: string;
+	phoneNumber: string;
+	password: string;
+}
+
 export const RegistrationForm = () => {
 	const [confirmMessage, setConfirmMessage] = useState(false);
 	const initialFormState = {
@@ -15,16 +22,16 @@ export const RegistrationForm = () => {
 	};
 
 	const initialFormErrorsState = {
-		username: null,
-		email: null,
-		phoneNumber: null,
-		password: null,
+		username: '',
+		email: '',
+		phoneNumber: '',
+		password: '',
 	};
 
 	const [formData, setFormData] = useState(initialFormState);
 	const [formErrors, setFormErrors] = useState(initialFormErrorsState);
 
-	const handleSubmit = (e) => {
+	const handleSubmit = (e: React.SyntheticEvent) => {
 		e.preventDefault();
 		if (
 			formErrors.username ||
@@ -43,39 +50,39 @@ export const RegistrationForm = () => {
 
 	useEffect(() => {
 		if (formData.username.length < 5 && formData.username.length > 0) {
-			setFormErrors((prevState) => ({
+			setFormErrors((prevState: FormErrors) => ({
 				...prevState,
 				username: 'Username must be more than 5 characters',
 			}));
 		} else {
-			setFormErrors((prevState) => ({
+			setFormErrors((prevState: FormErrors) => ({
 				...prevState,
-				username: null,
+				username: '',
 			}));
 		}
 	}, [formData.username]);
 
-	const handleUserNameChange = (e) => {
+	const handleUserNameChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
 		setFormData((prevState) => ({
 			...prevState,
 			username: e.target.value,
 		}));
 	};
-	const handlePasswordChange = (e) => {
+	const handlePasswordChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
 		setFormData((prevState) => ({
 			...prevState,
 			password: e.target.value,
 		}));
 	};
 
-	const handleEmailChange = (e) => {
+	const handleEmailChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
 		setFormData((prevState) => ({
 			...prevState,
 			email: e.target.value,
 		}));
 	};
 
-	const handlePhoneNumberChange = (e) => {
+	const handlePhoneNumberChange: React.ChangeEventHandler<HTMLInputElement> = (e) => {
 		setFormData((prevState) => ({
 			...prevState,
 			phoneNumber: e.target.value,
@@ -132,10 +139,10 @@ export const RegistrationForm = () => {
 						<button
 							type='submit'
 							disabled={
-								formErrors.username ||
-								formErrors.email ||
-								formErrors.phoneNumber ||
-								formErrors.password
+								Boolean(formErrors.username) ||
+								Boolean(formErrors.email) ||
+								Boolean(formErrors.phoneNumber) ||
+								Boolean(formErrors.password)
 							}
 							className='form-btn--submit'
 						>
