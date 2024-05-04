@@ -13,7 +13,7 @@ export const Navbar = ({open}: NavBarProps) => {
     return (
         <nav>
             <ul className={open ? 'navbar__links open' : 'navbar__links'}>
-                {user.isLoggedIn ?
+                {user?.isLoggedIn ?
                     (<>
                         <li className='navbar__link-item colored' onClick={() => dispatch({type: USER_ACTIONS.logOut})}><Link to="/" className='navbar__link colored'>Log out</Link></li>
                         <li className='navbar__link-item'><Link to="/" className='navbar__link'>Home</Link></li>

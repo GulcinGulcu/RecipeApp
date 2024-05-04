@@ -1,10 +1,25 @@
 import {createContext, useReducer, useContext} from 'react';
 
-export const USER_ACTIONS = {
-	logIn: 'log_in',
-	logOut: 'log_out',
-	updateUser: 'updated_user'
+export enum USER_ACTIONS  {
+	logIn= 'log_in',
+	logOut= 'log_out',
+	updateUser= 'updated_user',
 };
+
+type ACTIONTYPE = {
+	type: USER_ACTIONS.logIn | USER_ACTIONS.logOut | USER_ACTIONS.updateUser;
+	payload?: string;
+}
+
+interface LoggedInValues {
+	isLoggedIn?: boolean;
+	username?: string;
+}
+
+interface ProviderProps {
+	children: React.ReactNode;
+    initialState: LoggedInValues
+}
 
 export const loggedInUser = {
 	isLoggedIn: false,
@@ -12,10 +27,10 @@ export const loggedInUser = {
 };
 
 
-export const UserContext = createContext();
-export const UserDispatchContext = createContext();
+export const UserContext = createContext<LoggedInValues | null>(null);
+export const UserDispatchContext = createContext<React.Dispatch<ACTIONTYPE>>(() => undefined);
 
-export const UserProvider = ({children, initialState}) => {
+export const UserProvider = ({children, initialState}: ProviderProps) => {
 	const [user, dispatch] = useReducer(userReducer, initialState ?? {});
 
 	return (
@@ -27,7 +42,7 @@ export const UserProvider = ({children, initialState}) => {
 	)
 };
 
-function userReducer (state, action) {
+function userReducer (state: LoggedInValues, action: ACTIONTYPE) {
 	switch (action.type) {
 		case USER_ACTIONS.logIn: {
 			return (
@@ -41,10 +56,11 @@ function userReducer (state, action) {
 		}
 		case USER_ACTIONS.updateUser: {
 			return (
-				{...state, username: action.username}
+				{...state, username: action.payload}
 			);
 		}
-		default: throw Error(`Action type ${action.type} is not supported`);
+		default:
+		 return state;
 	}
 };
 
