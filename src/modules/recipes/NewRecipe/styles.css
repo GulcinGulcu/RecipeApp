@@ -1,0 +1,118 @@
+.recipe-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  color: var(--color-dark);
+  padding: 25px;
+  width: 100%;
+  margin: auto;
+}
+
+.input-area>input,
+textarea,
+select {
+  width: 60%;
+  padding: 10px;
+  font-family: inherit;
+  font-size: inherit;
+
+}
+
+.input-area>input:focus,
+textarea:focus,
+select:focus,
+.save-recipe-btn:focus {
+  outline: 2px solid var(--color-primary)
+}
+
+.input-area>label {
+  font-size: 22px;
+}
+
+.fieldset {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+  padding: 15px 25px;
+  border-radius: 4px;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-light);
+}
+
+.input-area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.error-message {
+  color: #c90505;
+  align-self: flex-end;
+}
+
+.save-recipe-btn {
+  font-size: 18px;
+  padding: 15px 25px;
+  margin-top: 15px;
+  border: none;
+  border-radius: 4px;
+  color: var(--color-light);
+  background-color: var(--color-primary);
+  cursor: pointer;
+}
+
+.save-recipe-btn:hover {
+  background-color: var(--color-hover);
+}
+
+.return-home-btn {
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  padding: 10px 25px;
+  border-radius: 4px;
+  min-width: 48px;
+
+}
+
+.return-home-btn:hover {
+  background-color: var(--color-hover);
+}
+
+.main-pattern {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 15px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23f8d7d2' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+
+@media all and (max-width: 768px) {
+
+  .fieldset {
+    width: 80%;
+  }
+}
+
+@media all and (max-width: 480px) {
+
+  .input-area>input,
+  textarea,
+  select {
+    padding: 5px;
+    font-size: 14px;
+  }
+
+  .fieldset {
+    width: 100%;
+    padding: 10px 20px;
+  }
+
+
+  .input-area>label {
+    font-size: 18px;
+  }
+}

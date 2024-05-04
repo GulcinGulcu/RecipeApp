@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap');
+
+:root {
+  --color-primary: #d90429;
+  --color-secondary: #f8d7d2;
+  --color-hover: #c00222;
+  --color-dark: #000;
+  --color-light: #fff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 16px;
+}
+
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+.recipes__list {
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+ 
+}
+
+.recipes__list>li {
+  border-bottom: 1px solid gray;
+  margin: 10px auto;
+  cursor: pointer;
+  padding-bottom: 5px;
+}
+

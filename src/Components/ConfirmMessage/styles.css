@@ -1,0 +1,24 @@
+.confirm-message-container {
+    border: 2px solid var(--color-primary);
+    width: 30%;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+    background-color: var(--color-light);
+    
+  }
+
+@media all and (max-width: 786px) {
+    .confirm-message-container {
+        width:60%;
+    }
+}
+
+@media all and (max-width: 480px) {
+    .confirm-message-container {
+        width: 90%;
+    }
+}

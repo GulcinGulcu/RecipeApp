@@ -1,0 +1,12 @@
+.registration-form {
+  border: 2px solid var(--color-primary);
+  width: 35%;
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  border-radius: 8px;
+  background-color: var(--color-light);
+}
+
