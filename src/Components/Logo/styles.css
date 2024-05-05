@@ -1,17 +1,17 @@
 .logo {
-    font-size: 28px;
-    letter-spacing: 8px;
-    color: var(--color-dark);
-    text-decoration: none;
-    font-weight: lighter;
-    color: var(--color-primary);
-    position: absolute;
-    top: 2%;
-    right: 2.8%;
+  font-size: 28px;
+  letter-spacing: 8px;
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: lighter;
+  color: var(--color-primary);
+  position: absolute;
+  top: 2%;
+  right: 2.8%;
 }
 
 @media all and (max-width: 768px) {
-    .logo {
-        display: none;
-    }
+  .logo {
+    display: none;
+  }
 }

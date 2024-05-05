@@ -1,11 +1,11 @@
 main {
-    margin-top: 20vh;
-    min-height: 80vh;
+  margin-top: 20vh;
+  min-height: 80vh;
 }
 
 @media all and (max-width: 480px) {
-    main {
-        margin-top: 15vh;
-        min-height: 85vh;
-    }
+  main {
+    margin-top: 15vh;
+    min-height: 85vh;
+  }
 }

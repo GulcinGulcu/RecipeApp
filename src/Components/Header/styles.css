@@ -1,40 +1,38 @@
 header {
-    display: flex;
-    align-items: center;
-    background-image: url('../../Assets/headerbckgrnd.jpg');
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    position: relative;
-    padding-bottom: 3.5%;
-    gap: 40px;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-    min-height: 20vh;
+  display: flex;
+  align-items: center;
+  background-image: url('../../Assets/headerbckgrnd.jpg');
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
+  padding-bottom: 3.5%;
+  gap: 40px;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 2;
+  min-height: 20vh;
 }
 
 .nav-container {
-    display: flex;
-    width: 63%;
-    justify-content: space-between;
+  display: flex;
+  width: 63%;
+  justify-content: space-between;
 }
 
 @media all and (max-width: 768px) {
-    .nav-container {
-        width: 75%;
-     }
-    
+  .nav-container {
+    width: 75%;
+  }
 }
 
 @media all and (max-width: 480px) {
-
-    header {
-        padding-bottom: 0;
-        min-height: 15vh;
-    }
-    .nav-container {
-       width: 80%;
-    }
+  header {
+    padding-bottom: 0;
+    min-height: 15vh;
+  }
+  .nav-container {
+    width: 80%;
+  }
 }

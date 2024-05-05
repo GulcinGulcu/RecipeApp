@@ -14,10 +14,9 @@
 
 body {
   margin: 0;
-  font-family: "Titillium Web", sans-serif;
+  font-family: 'Titillium Web', sans-serif;
   font-size: 16px;
 }
-
 
 ul {
   list-style: none;
@@ -29,13 +28,11 @@ ul {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr;
- 
 }
 
-.recipes__list>li {
+.recipes__list > li {
   border-bottom: 1px solid gray;
   margin: 10px auto;
   cursor: pointer;
   padding-bottom: 5px;
 }
-

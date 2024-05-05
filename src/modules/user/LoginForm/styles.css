@@ -1,56 +1,58 @@
 .login-form {
-    border: 2px solid var(--color-primary);
-    width: 30%;
-    padding: 50px 25px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 25px;
-    border-radius: 8px;
-    background-color: var(--color-light);
+  border: 2px solid var(--color-primary);
+  width: 30%;
+  padding: 50px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  border-radius: 8px;
+  background-color: var(--color-light);
 }
 
 .form-btn--submit {
-    min-width: 48px;
-    width: 40%;
-    padding: 10px 20px;
-    border: none;
-    background-color: var(--color-primary);
-    color: var(--color-light);
-    border-radius: 4px;
-    cursor: pointer;
+  min-width: 48px;
+  width: 40%;
+  padding: 10px 20px;
+  border: none;
+  background-color: var(--color-primary);
+  color: var(--color-light);
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .form-btn--submit:hover {
-    background-color: var(--color-hover);
+  background-color: var(--color-hover);
 }
 
 .welcome-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.welcome-section>p,
+.welcome-section > p,
 h3 {
-    margin: 0;
+  margin: 0;
 }
 
 .form-logo {
-    color: var(--color-primary);
-    font-size: 50px;
+  color: var(--color-primary);
+  font-size: 50px;
 }
 
 @media all and (max-width: 768px) {
-    .login-form, .registration-form{
-        width: 50%;
-        padding: 35px 20px;
-    }
+  .login-form,
+  .registration-form {
+    width: 50%;
+    padding: 35px 20px;
+  }
 }
 
 @media all and (max-width: 480px) {
-    .login-form, .registration-form{
-        width: 90%;
-        padding: 35px 20px;
-    }
+  .login-form,
+  .registration-form {
+    width: 90%;
+    padding: 35px 20px;
+  }
 }

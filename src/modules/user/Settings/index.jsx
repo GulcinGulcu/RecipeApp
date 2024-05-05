@@ -1,3 +1,6 @@
+import TextField from '@mui/material';
+import { useForm } from 'react-hook-form';
+
 export const Settings = () => {
-	return <h1>Settings Page</h1>;
+  return <form></form>;
 };

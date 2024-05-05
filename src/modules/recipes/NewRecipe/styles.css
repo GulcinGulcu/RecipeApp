@@ -9,24 +9,23 @@
   margin: auto;
 }
 
-.input-area>input,
+.input-area > input,
 textarea,
 select {
   width: 60%;
   padding: 10px;
   font-family: inherit;
   font-size: inherit;
-
 }
 
-.input-area>input:focus,
+.input-area > input:focus,
 textarea:focus,
 select:focus,
 .save-recipe-btn:focus {
-  outline: 2px solid var(--color-primary)
+  outline: 2px solid var(--color-primary);
 }
 
-.input-area>label {
+.input-area > label {
   font-size: 22px;
 }
 
@@ -73,7 +72,6 @@ select:focus,
   padding: 10px 25px;
   border-radius: 4px;
   min-width: 48px;
-
 }
 
 .return-home-btn:hover {
@@ -89,17 +87,14 @@ select:focus,
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='72' viewBox='0 0 36 72'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23f8d7d2' fill-opacity='1'%3E%3Cpath d='M2 6h12L8 18 2 6zm18 36h12l-6 12-6-12z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
 
-
 @media all and (max-width: 768px) {
-
   .fieldset {
     width: 80%;
   }
 }
 
 @media all and (max-width: 480px) {
-
-  .input-area>input,
+  .input-area > input,
   textarea,
   select {
     padding: 5px;
@@ -111,8 +106,7 @@ select:focus,
     padding: 10px 20px;
   }
 
-
-  .input-area>label {
+  .input-area > label {
     font-size: 18px;
   }
 }
