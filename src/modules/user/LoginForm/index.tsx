@@ -24,7 +24,7 @@ export const LoginForm = () => {
 
     const onFormSubmit = (data: FormValues) => {
         const username = data.username;
-        dispatch({ type: USER_ACTIONS.updateUser, payload:username });
+        dispatch({ type: USER_ACTIONS.updateUser, username: username });
         dispatch({ type: USER_ACTIONS.logIn });
         console.log(data)
         navigate('/', { replace: true })

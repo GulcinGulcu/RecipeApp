@@ -8,7 +8,7 @@ export enum USER_ACTIONS  {
 
 type ACTIONTYPE = {
 	type: USER_ACTIONS.logIn | USER_ACTIONS.logOut | USER_ACTIONS.updateUser;
-	payload?: string;
+	username?: string;
 }
 
 interface LoggedInValues {
@@ -56,7 +56,7 @@ function userReducer (state: LoggedInValues, action: ACTIONTYPE) {
 		}
 		case USER_ACTIONS.updateUser: {
 			return (
-				{...state, username: action.payload}
+				{...state, username: action.username}
 			);
 		}
 		default:
