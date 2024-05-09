@@ -3,14 +3,18 @@ import { Link } from 'react-router-dom';
 import { MdFiberManualRecord } from 'react-icons/md';
 import { GiHotMeal } from 'react-icons/gi';
 import { Main } from '../Main';
+import { useUser } from '../../modules/user/UserProvider';
 import './styles.css';
 
 export const Home = () => {
+  const { username, isLoggedIn } = useUser();
+
   return (
     <Main className='home__main'>
       <div className='home__main-container'>
         <MdFiberManualRecord className='background-icon-text' />
         <div className='home__main__text-content'>
+          {isLoggedIn && <h3>Welcome, {username}!</h3>}
           <GiHotMeal className='logo-sm' />
           <h1 className='home__main__heading'>
             Tasty Food <span className='colored'>Collections</span>

@@ -2,7 +2,7 @@ import './styles.css';
 
 interface MainProps {
   children: React.ReactNode;
-  className: string;
+  className?: string;
 }
 
 export const Main = ({ children, className }: MainProps) => {

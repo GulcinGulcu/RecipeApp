@@ -4,12 +4,8 @@ import { useNavigate } from 'react-router';
 import TextField from '@mui/material/TextField';
 import { GiHotMeal } from 'react-icons/gi';
 import { Main } from '../../../Components/Main';
+import { FormValues } from '../models';
 import './styles.css';
-
-interface FormValues {
-  username: string;
-  password: string;
-}
 
 export const LoginForm = () => {
   const dispatch = useUserDispatch();
@@ -22,9 +18,9 @@ export const LoginForm = () => {
   const navigate = useNavigate();
 
   const onFormSubmit = (data: FormValues) => {
-    const username = data.username;
-    dispatch({ type: USER_ACTIONS.updateUser, username: username });
+    dispatch({ type: USER_ACTIONS.updateUser, username: data.username });
     dispatch({ type: USER_ACTIONS.logIn });
+    dispatch({ type: USER_ACTIONS.updatePassword, password: data.password });
     navigate('/', { replace: true });
   };
 

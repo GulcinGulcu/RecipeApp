@@ -23,6 +23,10 @@ ul {
   padding: 0;
 }
 
+button {
+  cursor: pointer;
+}
+
 .recipes__list {
   padding-left: 0;
   display: grid;

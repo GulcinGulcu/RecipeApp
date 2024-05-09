@@ -1,19 +1,22 @@
 import { createContext, useReducer, useContext } from 'react';
 
 export enum USER_ACTIONS {
-  logIn = 'log_in',
-  logOut = 'log_out',
-  updateUser = 'updated_user',
+  logIn = 'log in',
+  logOut = 'log out',
+  updateUser = 'update user',
+  updatePassword = 'update password',
 }
 
 type ACTIONTYPE = {
-  type: USER_ACTIONS.logIn | USER_ACTIONS.logOut | USER_ACTIONS.updateUser;
+  type: USER_ACTIONS;
   username?: string;
+  password?: string;
 };
 
 interface LoggedInValues {
   isLoggedIn?: boolean;
   username?: string;
+  password?: string;
 }
 
 interface ProviderProps {
@@ -24,9 +27,10 @@ interface ProviderProps {
 export const loggedInUser = {
   isLoggedIn: false,
   username: '',
+  password: '',
 };
 
-export const UserContext = createContext<LoggedInValues | null>(null);
+export const UserContext = createContext<LoggedInValues>(loggedInUser);
 export const UserDispatchContext = createContext<React.Dispatch<ACTIONTYPE>>(
   () => undefined,
 );
@@ -53,6 +57,9 @@ function userReducer(state: LoggedInValues, action: ACTIONTYPE) {
     }
     case USER_ACTIONS.updateUser: {
       return { ...state, username: action.username };
+    }
+    case USER_ACTIONS.updatePassword: {
+      return { ...state, password: action.password };
     }
     default:
       return state;
